@@ -1,0 +1,116 @@
+{% extends 'admin_base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <center>
+        <div class="row">
+            <div class="col-12 d-flex flex-coulm justify-content-center">
+               <div>
+                <img src="https://i.ibb.co/L1pd1NC/download.png" alt="download" border="0">
+               </div>
+               <div>
+                <h1>Welcome To Rise Learn!!!!</h1>
+               <p>Explore, Learn, Thrive: Access curated study materials tailored to rural curriculum needs.</p>
+               </div>
+            </div>
+        </div>
+    </center>
+</div>
+
+
+
+
+<style>
+    .buttons{
+        border: 1px solid black;
+    }
+    .buttons a{
+        text-decoration: none;
+        color: black;
+    }
+</style>
+<style>
+    .buttons {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 20px;
+    }
+    .buttons a {
+        text-decoration: none;
+        color: black;
+        display: block;
+        text-align: center;
+    }
+    .buttons img {
+        max-width: 100%;
+        height: auto;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .col-3 {
+        flex: 0 0 23%;
+        max-width: 23%;
+        box-sizing: border-box;
+    }
+    .shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        border-radius: 5px;
+    }
+</style>
+<div class="container mt-5">
+    <!-- <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/add_grants">
+                <div>
+                  <img src="{% static 'img/ad1.png' %}" alt="download">
+                </div>
+                <center>Grants</center>
+            </a>
+        </div>
+    </div> -->
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/add_loans">
+                <div>
+                  <img src="{% static 'img/ad2.png' %}" alt="download">
+                </div>
+                <center>Loans</center>
+            </a>
+        </div>
+    </div>
+    <!-- <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/add_incentive">
+                <div>
+                  <img src="{% static 'img/ad3.png' %}" alt="download">
+                </div>
+                <center>Incentives</center>
+            </a>
+        </div>
+    </div> -->
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/add_job">
+                <div>
+                  <img src="{% static 'img/ad4.png' %}" alt="download">
+                </div>
+                <center>Jobs</center>
+            </a>
+        </div>
+    </div>
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="">
+                <div>
+                  <img src="{% static 'img/ad5.png' %}" alt="download" border="0">
+                </div>
+                <center>Internships</center>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

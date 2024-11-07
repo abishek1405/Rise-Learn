@@ -1,0 +1,94 @@
+{% extends 'student_base.html' %}
+{% load static %}
+{% block content %}
+
+{% if user_det.reason  %}
+<center>Reason: {{ user_det.reason }}</center>
+{% else %}
+<p></p>
+{% endif %}
+<style>
+   .shadow{  
+    background-color: #320c0b !important;
+    width: 400px;
+    border-radius: 20px;
+    border-bottom: 10px solid #9fc088;
+    border-top: 10px solid #9fc088;
+    }
+    .shadow p{
+        color: #fff;
+    }
+    .shadow img{
+        border: 3px solid #9fc088;
+        border-radius: 50%;
+        padding: 0 !important;
+        width: 130px;
+        margin: 10px;
+        background: #fff;
+    }
+</style>
+<div class="container mt-3">
+    <div class="row">
+        {% if user_det.student_guid is None %}
+            {% for x in data %}
+                <div class="col-12 col-md-4">
+                    <div class="shadow p-3 text-center">
+                        <img width="25" src="{% static 'img/user.png' %}" alt="User Image">
+                        <p>Name: {{ x.username }}</p>
+                        <p>Email: {{ x.email }}</p>
+                        <p>Phone No: {{ x.contact }}</p>
+                        <p>Qualification: {{ x.qualification }}</p>
+                        <p>Class: {{ x.class_name }}</p>
+                        <p>Fees: {{ x.fee }}</p>
+                     
+                        <a href="/payment/{{ x.id }}"><button class="btn btn-primary">Register</button></a> 
+                        
+                    </div>
+                </div>
+            {% endfor %}
+        {% elif user_det.student_conformation == 'waiting' %}
+            <center>
+                <div class="col-8">
+                    <p style="color: red;">You have already chosen your guide. Please wait for your guide's acceptance.</p>
+                </div>
+            </center>
+            <center>
+                <div class="col-12 mt-4 col-md-4">
+                    <div class="shadow p-3 text-center">
+                        <img class="w-50" src="{% static 'img/user.png' %}" alt="User Image">
+                        <p>Name: {{ user_guid.username }}</p>
+                        <p>Email: {{ user_guid.email }}</p>
+                        <p>Phone No: {{ user_guid.contact }}</p>
+                        <p>Qualification: {{ user_guid.qualification }}</p>
+                        <p>Class: {{ user_guid.class_name }}</p>
+                        <p>Fees: {{ user_guid.fee }}</p>
+                    </div>
+                </div>
+            </center>
+        {% else %}
+            <center>
+                <div class="col-8">
+                    <p>You have already chosen your guide.</p>
+                </div>
+            </center>
+            <center>
+                <div class="col-12 mt-4 col-md-4">
+                    <div class="shadow p-3 text-center">
+                        <img class="w-50" src="{% static 'img/user.png' %}" alt="User Image">
+                        <p>Name: {{ user_guid.username }}</p>
+                        <p>Email: {{ user_guid.email }}</p>
+                        <p>Phone No: {{ user_guid.contact }}</p>
+                        <p>Qualification: {{ user_guid.qualification }}</p>
+                        <p>Class: {{ user_guid.class_name }}</p>
+                        <p>Fees: {{ user_guid.fee }}</p>
+                    </div>
+                </div>
+            </center>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
+
+

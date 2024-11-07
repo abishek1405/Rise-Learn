@@ -1,0 +1,40 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="container mt-5">
+    <center>
+        <div class="row">
+           <center>
+            <h3>Add Mentor</h3>
+            <div class="col-8 bg-primary">
+                <table class="w3-table-all">
+                    <thead>
+                      <tr style="background-color: #f0e62600;">
+                        
+                        <th>Mentor Name</th>
+                        <th>Details</th>
+                      </tr>
+                    </thead>
+                    
+                    <tr>
+                      
+                      <td>{{ data.username }}</td>
+                      <td>
+                        <form method="POST">
+                          {% csrf_token %}
+                          <button type="submit">Accpect</button>
+                          <button type="submit">reject</button>
+                        </form>
+                      </td>
+                    </tr>
+                    
+                </table>
+             </div>
+           </center>
+        </div>
+    </center>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'student_base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <center>
+        <div class="row">
+            <div class="col-12 d-flex flex-coulm justify-content-center">
+               <!-- <div>
+                <img src="https://i.ibb.co/L1pd1NC/download.png" alt="download" border="0">
+               </div> -->
+               <div>
+                <h1>Welcome To Rise Learn!!!!</h1>
+               <p>Explore, Learn, Thrive: Access curated study materials tailored to rural curriculum needs.</p>
+               </div>
+            </div>
+        </div>
+    </center>
+</div>
+
+
+
+
+<style>
+    .buttons{
+        border: 1px solid black;
+    }
+    .buttons a{
+        text-decoration: none;
+        color: black;
+    }
+</style>
+<style>
+    .buttons {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 20px;
+    }
+    .buttons a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        text-align: center;
+    }
+    .buttons img {
+        max-width: 100%;
+        height: auto;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .col-3 {
+        flex: 0 0 23%;
+        max-width: 23%;
+        box-sizing: border-box;
+    }
+    .shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        border-radius: 5px;
+        background: #290a09;
+    }
+    .shadow:hover{
+        background:#9FC088;
+    }
+    .shadow:hover .buttons a {
+        color: #000;
+    }
+    .shadow:hover .buttons {
+        box-shadow: 1px 1px 5px #ccc;
+    }
+    .btn.btn-primary,  .btn.btn-primary, .btn.btn-primary:active {
+    background-color: #320c0b;
+    color: #fff !important;
+    padding: 7px 30px;
+    }
+</style>
+<div class="container mt-5">
+    <!-- <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/view_grants">
+                <div>
+                  <img src="{% static 'img/ad1.png' %}" alt="download">
+                </div>
+                <center>Grants</center>
+            </a>
+        </div>
+    </div> -->
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/view_load">
+                <div>
+                  <img src="{% static 'img/ad2.png' %}" alt="download">
+                </div>
+                <center>Loans</center>
+            </a>
+        </div>
+    </div>
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/loat_request">
+                <div>
+                  <img src="{% static 'img/ad3.png' %}" alt="download">
+                </div>
+                <center>Loan Request</center>
+            </a>
+        </div>
+    </div>
+  
+{% endblock %}

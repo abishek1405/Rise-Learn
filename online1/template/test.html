@@ -1,0 +1,49 @@
+{% extends 'student_base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .bor{
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 30px;
+    }
+</style>
+<div class="container mt-5 mb-5">
+  <form method="post" >
+      {% csrf_token %}
+      <div class="row">
+          {% for question in data %}
+          <div class="col-12 col-md-6 mb-4">
+              <div class="bor">
+                  <h4> {{ forloop.counter }}.{{ question.question }}</h4>
+                  <div>
+                      <input type="radio" name="answer_{{ question.id }}" value="{{ question.obtionA }}" id="question_{{ question.id }}_A">
+                      <label for="question_{{ question.id }}_A">{{ question.obtionA }}</label>
+                  </div>
+                  <div>
+                      <input type="radio" name="answer_{{ question.id }}" value="{{ question.obtionB }}" id="question_{{ question.id }}_B">
+                      <label for="question_{{ question.id }}_B">{{ question.obtionB }}</label>
+                  </div>
+                  <div>
+                      <input type="radio" name="answer_{{ question.id }}" value="{{ question.obtionC }}" id="question_{{ question.id }}_C">
+                      <label for="question_{{ question.id }}_C">{{ question.obtionC }}</label>
+                  </div>
+                  <div>
+                      <input type="radio" name="answer_{{ question.id }}" value="{{ question.obtionD }}" id="question_{{ question.id }}_D">
+                      <label for="question_{{ question.id }}_D">{{ question.obtionD }}</label>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Answers</button>
+  </form>
+</div>
+
+
+
+{% endblock %}
+
+
+

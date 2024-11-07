@@ -1,0 +1,129 @@
+{% extends 'faculty_base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="container mt-5">
+    <center>
+        <div class="row">
+            <div class="col-12 d-flex flex-coulm justify-content-center">
+               <div>
+                <img src="{% static 'img/home.png' %}" width="100px" alt="download" border="0">
+               </div>
+               <div>
+                <h1>Welcome To Rise Learn!!!!</h1>
+               <p>Explore, Learn, Thrive: Access curated study materials tailored to rural curriculum needs.</p>
+               </div>
+            </div>
+        </div>
+    </center>
+</div>
+
+
+
+
+<style>
+    .buttons{
+        border: 1px solid black;
+    }
+    .buttons a{
+        text-decoration: none;
+        color: black;
+    }
+</style>
+    background-color: #9FC088 !important;
+<style>
+    .buttons {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 20px;
+    }
+    .buttons a {
+        text-decoration: none;
+        color: black;
+        display: block;
+        text-align: center;
+    }
+    .buttons img {
+        max-width: 100%;
+        height: auto;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .col-3 {
+        flex: 0 0 23%;
+        max-width: 23%;
+        box-sizing: border-box;
+    }
+    .shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        border-radius: 5px;
+    }
+</style>
+<div class="container mt-5">
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/add_category">
+                <div>
+                   <img class="w-100" src="{% static 'img/fac1.png' %}" alt="">                       
+                </div>
+                Add Study Material
+            </a>
+        </div>
+    </div>
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/Student_request">
+                <div>
+                    <img class="w-100"   src="{% static 'img/student_request.png' %}" alt="download">
+                </div>
+                Student Request
+            </a>
+        </div>
+    </div>
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/add_test">
+                <div>
+                    <img class="w-100" src="{% static 'img/add_study.png' %}" alt="Mentor Record">
+                </div>
+                Add Test
+            </a>
+        </div>
+    </div>
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/faculty_progress">
+                <div>
+                    <img class="w-100" src="{% static 'img/stu3.png' %}" alt="Mentor Record">
+                </div>
+                Student Progress Chart
+            </a>
+        </div>
+    </div>
+
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/Approved_Student">
+                <div>
+                    <img class="w-100" src="{% static 'img/stu3.png' %}" alt="Mentor Record">
+                </div>
+                Approved Student
+            </a>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}
+
+
+

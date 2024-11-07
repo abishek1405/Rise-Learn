@@ -1,0 +1,89 @@
+{% extends 'admin_base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Applications</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="container">
+        <h1>Internship Applications</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Internship Title</th>
+                    <th>Skills</th>
+                    <th>Applied Date</th>
+                    <th>Resume</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for application in data %}
+                    <tr>
+                        <td>{{ application.name }}</td>
+                        <td>{{ application.age }}</td>
+                        <td>{{ application.email }}</td>
+                        <td>{{ application.phone }}</td>
+                        <td>{{ application.job.title }}</td>
+                        <td>{{ application.skills }}</td>
+                        <td>{{ application.applied_date|date:"Y-m-d H:i" }}</td>
+                        <td>
+                            <a href="{{ application.resume.url }}" download>Download Resume</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="8">No applications found.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

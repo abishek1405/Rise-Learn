@@ -1,0 +1,82 @@
+
+
+{% extends 'student_base.html' %}
+
+{% block content %}
+
+
+
+<style>
+
+.profile{
+  height: 100vh;
+  overflow: auto;
+}
+.pro{
+  background-color: #320c0b !important;
+  width: 400px;
+  border-radius: 20px;
+  border-bottom: 10px solid #9fc088;
+  border-top: 10px solid #9fc088;
+  }
+.pro p{
+  color: #fff !important;
+}
+.pro img{
+    border: 3px solid #9fc088;
+    border-radius: 50%;
+    padding: 0 !important;
+    width: 130px;
+    margin: 10px;
+    background: #fff;
+}
+.btn{
+  font-weight: bolder;
+  padding: 5px 40px;
+}
+.btn.btn-primary, .btn.btn-primary:active{
+  background: #9fc088;
+  color: #000;
+  border: 1px solid #9fc088;
+}
+.btn.btn-warning, .btn.btn-warning:active{
+  background: #e4d88a;
+  color: #000;
+  border: 1px solid #e4d88a;
+}
+h1{
+  color: #9fc088;
+}
+.btn.btn-primary.dropdown-toggle{
+  padding: 5px 15px;
+  color: #fff;
+  font-weight: 400;
+  }
+</style>
+
+
+  <div class="container">
+    <div class="col-12">
+      <div class="d-flex flex-column justify-content-center profile placeholder-glow">
+        <center>
+          <div class="pro text-center p-4">
+            <h1 class="text-center ">PROFILE</h1>
+            <img src="https://www.pngall.com/wp-content/uploads/5/Profile-Male-PNG-Clipart.png" class="p-3" width="200" alt="">
+            <p class="">Name: {{ request.user }}</p>
+            <p class="">Age: {{ data.age }}</p>
+            <p class="">Gender: {{ data.gender }}</p>
+            <p class="">Email: {{ data.email }}</p>
+            <p class="">Contact: {{ data.contact }}</p>
+            <a href="/acc/{{ data.id }}"><button class="btn btn-primary">Edit</button></a>
+            <a href="/logout"><button class="btn btn-warning">Logout</button></a>
+          </div>
+        </center>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock %}
+
+     

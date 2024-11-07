@@ -1,0 +1,55 @@
+
+
+{% extends 'faculty_base.html' %}
+
+{% block content %}
+
+
+
+<style>
+
+.profile{
+  height: 100vh;
+  overflow: auto;
+}
+.pro{
+  background-color: rgb(255, 255, 255) !important;
+  }
+.pro p{
+  color: black !important;
+}
+.btn{
+
+
+  font-weight: bolder;
+  padding: 5px 40px;
+}
+</style>
+
+
+  <div class="container">
+    <div class="col-12">
+      <div class="d-flex flex-column justify-content-center profile placeholder-glow">
+        <center>
+          <div class="pro text-center p-4">
+            <h1 class="text-center ">PROFILE</h1>
+            <img src="https://www.pngall.com/wp-content/uploads/5/Profile-Male-PNG-Clipart.png" class="p-3" width="200" alt="">
+            <p class="">Name: {{ request.user }}</p>
+            <p class="">Email: {{ data.email }}</p>
+            <p class="">Number: {{ data.contact }}</p>
+            <p class="">Qualification: {{ data.qualification }}</p>
+            <p class="">Class: {{ data.class_name }}</p>
+            <p class="">Fees: {{ data.fee }}</p>
+            <a href="/acc/{{ data.id }}"><button class="btn btn-primary">Edit</button></a>
+            <a href="/logout"><button class="btn btn-warning">Logout</button></a>
+          </div>
+        </center>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock %}
+
+     

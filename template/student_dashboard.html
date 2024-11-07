@@ -1,0 +1,134 @@
+{% extends 'student_base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="container mt-5">
+    <center>
+        <div class="row">
+            <div class="col-12 d-flex flex-coulm justify-content-center">
+               <div>
+                <!-- <img src="{% static 'img/logo1.png' %}" width="100px" alt="download" border="0"> -->
+                <h1>Welcome To Students Portal!!!!</h1>
+               <p>Explore, Learn, Thrive: Access curated study materials tailored to rural curriculum needs.</p>
+               </div>
+            </div>
+        </div>
+    </center>
+</div>
+
+
+
+
+<style>
+    .buttons{
+        border: 1px solid black;
+    }
+    .buttons a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .buttons {
+        padding: 20px;
+    }
+    .buttons a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        text-align: center;
+        font-weight: 600;
+    }
+    .buttons img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .col-3 {
+        flex: 0 0 23%;
+        max-width: 23%;
+        box-sizing: border-box;
+    }
+    .shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        border-radius: 5px;
+        background: #290a09;
+    }
+    .shadow:hover{
+        background:#9FC088;
+    }
+    .shadow:hover .buttons a {
+        color: #000;
+    }
+    .shadow:hover .buttons {
+        box-shadow: 1px 1px 5px #ccc;
+    }
+</style>
+<div class="container mt-3">
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/mentor_access">
+                <div>
+                   <img class="w-100" src="{% static 'img/stu1.png' %}" alt="">  <br>                     
+                </div>
+                 Mentor Access
+            </a>
+        </div>
+    </div>
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/study_material">
+                <div>
+                    <img class="w-100"   src="{% static 'img/stu2.png' %}" alt="download"><br>   
+                </div>
+                Study Material
+            </a>
+        </div>
+    </div>
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/progress">
+                <div>
+                    <img class="w-100" src="{% static 'img/stu3.png' %}" alt="Mentor Record"><br> 
+                </div>
+                Progress Chart
+            </a>
+        </div>
+    </div>
+
+   
+
+    <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/stu_more_information">
+                <div>
+                    <img class="w-100" src="{% static 'img/stu4.png' %}" alt="Request List"><br> 
+                </div>
+                More Information
+            </a>
+        </div>
+    </div>
+    <!-- <div class="col-2 shadow">
+        <div class="buttons">
+            <a href="/payment_success/5">
+                <div>
+                    <img class="w-100" src="{% static 'img/stu5.png' %}" alt="Request List">
+                </div>
+                Payment Status
+            </a>
+        </div>
+    </div> -->
+</div>
+
+
+{% endblock %}
+
+
+

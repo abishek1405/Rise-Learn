@@ -1,0 +1,41 @@
+{% extends 'admin_base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  .table tr th{
+    background: #290a09;
+    color: #fff;
+  }
+</style>
+
+<center>
+  <div class="col-12 col-md-11 mt-5">
+    <table class="table table-bordered border-secondary">
+        <tr>
+          <th class="text-center">Student Name</th>
+          <th class="text-center">Description</th>
+          <th class="text-center">Action</th>
+        </tr>        
+        {% for x in data %}
+        <tr>
+          <td><center>{{ x.user }}</center></td>
+          <td><center>{{ x.description_loan }}</center></td>
+          <td>
+          <center>
+            <a href="/loan_request_accept/{{ x.id }}"><button class="btn btn-primary">Accept</button></a>
+          <a href="/loan_request_reject/{{ x.id }}"><button class="btn btn-danger">Reject</button></a>
+          </center>
+        </td>
+          
+        </tr>              
+        {% endfor %}
+      </table>
+  </div> 
+</center>
+
+
+{% endblock %}
+
+
+

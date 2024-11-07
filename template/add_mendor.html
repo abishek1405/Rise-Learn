@@ -1,0 +1,40 @@
+{% extends 'admin_base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="container mt-5">
+  <center>
+      <h3>Add Mentor</h3>
+      {% for x in messages %}
+      <p class="alert alert-primary">{{ x }} </p>  
+      {% endfor %}
+      
+  </center>
+  <div class="row">
+      {% for x in data %}
+      <div class="col-md-4 mb-4">
+          <div class="card shadow-sm">
+              <div class="card-body">
+                  <h5 class="card-title">{{ x.username }}</h5>
+                  <p class="card-text"><strong>Contact:</strong> {{ x.contact }}</p>
+                  <p class="card-text"><strong>Qualification:</strong> {{ x.qualification }}</p>
+                  <p class="card-text"><strong>Salary Expectation:</strong> {{ x.fee }}</p>
+                  <div class="d-flex justify-content-between">
+                      <a href="/accept_mentor/{{ x.id }}" class="btn btn-success">Accept</a>
+                      <a href="/reject_mentor/{{ x.id }}" class="btn btn-danger">Reject</a>
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+      {% empty %}
+      <div class="col-12">
+          <p>No mentors available at the moment.</p>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+
+
+{% endblock %}

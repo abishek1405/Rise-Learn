@@ -1,0 +1,85 @@
+{% extends 'student_base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<style>
+  input[type=text],
+  input[type=file],
+  select {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #d6b0b0;
+    box-sizing: border-box;
+  }
+
+
+
+  .fa-google {
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* button {
+  background-color: #266c87;
+  color: white;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+} */
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+
+  .main {
+    padding-top: 10px !important;
+
+  }
+
+  .rown {
+    background-color: white;
+  }
+</style>
+
+<!-- <script src="https://kit.fontawesome.com/1cf1ca806e.js" crossorigin="anonymous"></script> -->
+
+
+
+
+<div class="container mb-5">
+  <div class="row">
+    {% for x in meterial %}
+    <div class="col-12 col-md-3">
+      <img src="{% static 'img/pdf.png' %}" class="w-100" alt="">
+      <center>
+        <p>{{ x.meterial }}</p>
+      </center>
+      <center>
+        <p>{{x.subject}}
+        </p>
+      </center>
+
+      <center><a download="{{ x.meterial.url }}" href="{{ x.meterial.url }}"><button class="btn btn-primary">Download <i
+              class="fa-solid fa-download"></i></button></a></center>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

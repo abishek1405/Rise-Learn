@@ -1,0 +1,25 @@
+{% extends 'student_base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        {% for x in data %}
+        <div class="col-12 col-md-2">
+          <a href="/test/{{ x.sub }}" style="text-decoration: none; color: black;">
+            <center><i class="fa-solid fa-clipboard" style="font-size: 100px; color: rgb(34, 177, 233);"></i></center>
+            <center><p>{{ x.sub }}</p></center>
+          </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+

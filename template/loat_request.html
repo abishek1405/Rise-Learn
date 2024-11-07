@@ -1,0 +1,102 @@
+{% extends 'student_base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Request</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       .card-header{ 
+        background: #320c0b !important;
+    }
+        body {
+        background: #fffcea;
+    }
+    ul{
+        margin-bottom: 0;
+    }
+    .btn-success, .btn-success:hover, .btn-success:active {
+        background-color: #9fc088;
+        border-color: #9fc088;
+        width: auto !important;
+        color: #000;
+        margin: 0 auto;
+        font-weight: 600;
+    }
+    .shadow{
+        margin-top: 20px;
+        background: #b2cba1;
+    }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Submit Your Loan Request</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Display messages for success or error -->
+                        {% if messages %}
+                            <div class="alert alert-info">
+                                <ul>
+                                    {% for message in messages %}
+                                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        <!-- Loan Request Form -->
+                        <form method="POST">
+                            {% csrf_token %}
+
+                            <div class="form-group">
+                                <label for="description_loan">Loan Description</label>
+                                <textarea id="description_loan" name="description_loan" class="form-control" rows="5" placeholder="Describe your loan request" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-block">Submit Loan Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for x in data %}
+            <div class="col-md-3">
+                <div class="shadow">
+                    <p class="" style="padding: 15px;">
+                       <strong>Request:</strong> {{ x.description_loan }} <br>
+                       <strong>status:</strong> {{ x.status }}
+                    </p>
+                
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional for dropdowns, etc.) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+{% endblock %}
+
+
+

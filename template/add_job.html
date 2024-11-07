@@ -1,0 +1,115 @@
+
+
+{% extends 'admin_base.html' %}
+
+{% block content %}
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=file] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #f0e62600;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f0e62600;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.main{
+    width: 13cm;
+
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+</style>
+
+<center>
+  <br>
+  <br>
+
+<div class="main">   
+    <div class="d-flex flex-column justify-content-center">
+        <h2>Add Internship Form</h2>
+        
+        <form  class="main" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="container">
+            <label for="uname"><b>Company Logo</b></label>
+            <input type="file"  name="img" required>
+            <label for="uname"><b>Job Role</b></label>
+            <input type="text"  name="titile" required>
+            <label for="psw"><b>Description</b></label>
+            <input type="text"  name="point" required>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+        </form>
+        
+    </div>
+</div>
+</center>
+
+<div class="container">
+  <div class="row">
+    {% for x in data %}
+    <div class="col-12 col-md-4">
+      <div class="shadow p-3">
+        <center><img src="{{ x.img.url }}" class="w-100" alt=""></center>
+        <center><p class="mt-3">{{ x.title }}</p></center>
+      <center><p>{{ x.point }}</p></center>
+      <a href="/job_delet/{{ x.id }}"><button class="btn btn-primary">Delete</button></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

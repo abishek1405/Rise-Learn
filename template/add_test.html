@@ -1,0 +1,96 @@
+{% extends 'faculty_base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  input[type=text],input[type=file], select {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #d6b0b0;
+  box-sizing: border-box;
+}
+
+
+
+.fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* button {
+  background-color: #266c87;
+  color: white;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+} */
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+  .main{
+    padding-top: 10px !important;
+    
+  }
+  .rown{
+    background-color: white;
+  }
+ 
+</style>
+
+<!-- <script src="https://kit.fontawesome.com/1cf1ca806e.js" crossorigin="anonymous"></script> -->
+   
+      <div class="main d-flex flex-column justify-content-center ">
+        <div class="container">
+          <div class="row rown">
+            <div class="col-12 ">
+                <center>
+                <form method="POST" class="p-5">
+                  {% csrf_token %}
+
+                 
+                  <label for="username"><b>Subject name</b></label> <br>
+                  <input type="text" name="sub" placeholder="Ex: science,english" required> <br>
+                  <input type="submit" class="btn btn-primary"><br><br> 
+              </form>
+              
+              
+              
+
+              <div class="col-12 col-md-8">
+                <table class="table table-bordered border-primary">
+                    <tr>
+                      <td class="text-center">Test</td>
+                      <td class="text-center">Add Questions</td>
+                    </tr>        
+                    {% for x in data %}
+                    <tr>
+                      <td>{{ x.sub }}</td>
+                      <td><center><a href="/add_questions/{{ x.id }}" ><i class=" fa-solid fa-edit"></i></a></center></td>
+                    </tr>              
+                    {% endfor %}
+                  </table>
+              </div>            
+                </center>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+
+    
+{% endblock %}

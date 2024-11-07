@@ -1,0 +1,50 @@
+{% extends 'faculty_base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        {% for x in data %}
+        <div class="col-12 col-md-2">
+          <a href="/test/{{ x.sub }}" style="text-decoration: none; color: black;">
+            <center><i class="fa-solid fa-clipboard" style="font-size: 100px;"></i></center>
+            <center><p>{{ x.sub }}</p></center>
+          </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<center>
+  <h5>Student Score Board</h5>
+</center>
+<center>
+  <div class="col-12 col-md-8 mt-4">
+    <table class="table table-bordered border-primary">
+        <tr>
+          <td class="text-center">Name</td>
+          <td class="text-center">Subject</td>
+          <td class="text-center">Total Question</td>
+          <td class="text-center">Wrong Answers</td>
+          <td class="text-center">Score</td>
+        </tr>        
+        {% for x in score_data %}
+        <tr>
+          <td><center>{{ x.user.name }}</center></td>
+          <td><center>{{ x.test_id }}</center></td>
+          <td><center>{{ x.tot }}</center></td>
+          <td><center>{{ x.worng_ans }}</center></td>
+          <td><center>{{ x.student_score }}/{{ x.tot }}</center></td>
+        </tr>              
+        {% endfor %}
+      </table>
+  </div> 
+</center>
+
+
+{% endblock %}
+
+
+

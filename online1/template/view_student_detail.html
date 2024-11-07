@@ -1,0 +1,42 @@
+{% extends 'faculty_base.html' %}
+{% load static %}
+{% block content %}
+
+
+<center>
+    <div class="col-12 mt-4 col-md-4">
+        <div class="shadow p-3 text-center">
+            <img class="w-50" src="{% static 'img/user.png' %}" alt="User Image">
+            <p>Name: {{ data.username }}</p>
+            <p>Email: {{ data.email }}</p>
+            <p>Phone No: {{ data.contact }}</p>
+            <p>Class: {{ data.class_name }}</p>
+            <div class="d-flex">
+                <div class="col-6">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <label for="">Reason for Rejection</label> <br>
+                        <input required type="text" name="reason"  id=""> <br>
+                        <input  type="hidden" name="rej_acc" value="Reject">
+                        <button type="submit" class="btn btn-danger mt-2">Reject</button>
+                    </form>
+                </div>
+                <div class="col-6">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <label for="">Reason for Accept</label> <br>
+                        <input required type="text" name="reason"  id=""> <br>
+                        <input  type="hidden" name="rej_acc" value="Accept">
+                        <button type="submit" class="btn btn-primary mt-2">Accept</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+
+
+{% endblock %}
+
+
+

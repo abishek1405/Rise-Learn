@@ -1,0 +1,124 @@
+{% extends 'admin_base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<div class="container mt-5">
+    <center>
+        <div class="row">
+            <div class="col-12 d-flex flex-coulm justify-content-center">
+               <div>
+                <img src="{% static 'img/home.png' %}" width="100px" alt="download" border="0">
+               </div>
+               <div>
+                <h1>Welcome To Admin portal!!!!</h1>
+               <p>Explore, Learn, Thrive: Access curated study materials tailored to rural curriculum needs.</p>
+               </div>
+            </div>
+        </div>
+    </center>
+</div>
+
+
+
+
+<style>
+    .buttons{
+        border: 1px solid black;
+    }
+    .buttons a{
+        text-decoration: none;
+        color: black;
+    }
+    
+</style>
+<style>
+    .buttons {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 20px;
+    }
+    .buttons a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        text-align: center;
+        font-weight: 600;
+    }
+    .buttons img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .col-3 {
+        flex: 0 0 23%;
+        max-width: 23%;
+        box-sizing: border-box;
+    }
+    .shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        border-radius: 5px;
+        background: #290a09;
+    }
+    .shadow:hover{
+        background:#9FC088;
+    }
+    .shadow:hover .buttons a {
+        color: #000;
+    }
+    .shadow:hover .buttons {
+        box-shadow: 1px 1px 5px #ccc;
+        
+    }
+</style>
+<div class="container mt-5">
+    <div class="col-3 shadow">
+        <div class="buttons">
+            <a href="/add_mendor">
+                <div>
+                   <img class="w-100" src="{% static 'img/request.png' %}" alt="">                       
+                </div>
+                Add Mentor
+            </a>
+        </div>
+    </div>
+    <div class="col-3 shadow">
+        <div class="buttons">
+            <a href="/more_information">
+                <div>
+                    <img class="w-100"   src="{% static 'img/add_study.png' %}" alt="download">
+                </div>
+                More Information
+            </a>
+        </div>
+    </div>
+    <div class="col-3 shadow">
+        <div class="buttons">
+            <a href="/mentor_records">
+                <div>
+                    <img class="w-100" src="{% static 'img/student_request.png' %}" alt="Mentor Record">
+                </div>
+                Mentor Record
+            </a>
+        </div>
+    </div>
+    <!-- <div class="col-3 shadow">
+        <div class="buttons">
+            <a href="/admin_view_reques">
+                <div>
+                    <img class="w-100" src="{% static 'img/add_test.png' %}" alt="Request List">
+                </div>
+                Request List
+            </a>
+        </div>
+    </div> -->
+</div>
+{% endblock %}

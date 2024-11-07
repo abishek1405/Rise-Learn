@@ -1,0 +1,118 @@
+{% extends 'faculty_base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  input[type=text],input[type=file], select {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #d6b0b0;
+  box-sizing: border-box;
+}
+
+
+
+.fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* button {
+  background-color: #266c87;
+  color: white;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+} */
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+  .main{
+    padding-top: 10px !important;
+    
+  }
+  .rown{
+    background-color: white;
+  }
+ 
+</style>
+
+<!-- <script src="https://kit.fontawesome.com/1cf1ca806e.js" crossorigin="anonymous"></script> -->
+   
+      <div class="main d-flex flex-column justify-content-center ">
+        <div class="container">
+          <div class="row rown">
+            <div class="col-12 ">
+                <center>
+                <form method="POST" class="p-5">
+                  {% csrf_token %}
+
+                 
+                  <label for="username"><b>Question</b></label> <br>
+                  <input type="text" name="question" placeholder="Ex: how many one rs in 10 rs" required> <br>
+                  <label for="username"><b>Obtion A</b></label> <br>
+                  <input type="text" name="obtionA" placeholder="Ex: 5" required> <br>
+                  <label for="username"><b>Obtion B</b></label> <br>
+                  <input type="text" name="obtionB" placeholder="Ex: 4" required> <br>
+                  <label for="username"><b>Obtion C</b></label> <br>
+                  <input type="text" name="obtionC" placeholder="Ex: 4" required> <br>
+                  <label for="username"><b>Obtion D</b></label> <br>
+                  <input type="text" name="obtionD" placeholder="Ex: 7" required> <br>
+                  <br>
+                  <br>
+                  <label for="username"><b>Correct Answer </b></label> <br>
+                  <input type="text" name="correct_answer" placeholder="Ex: 10" required> <br>
+
+                  <input type="submit" class="btn btn-primary"><br><br> 
+              </form>
+              
+              
+              
+
+              <div class="col-12 col-md-8">
+                <table class="table table-bordered border-primary">
+                    <tr>
+                      <td class="text-center">Question</td>
+                      <td class="text-center">obtionA</td>
+                      <td class="text-center">obtionB</td>
+                      <td class="text-center">obtionC</td>
+                      <td class="text-center">obtionD</td>
+                      <td class="text-center">correct_answer</td>
+                    </tr>        
+                    {% for x in data %}
+                    <tr>
+                      <td>{{ x.question }}</td>
+                      <td>{{ x.obtionA }}</td>
+                      <td>{{ x.obtionB }}</td>
+                      <td>{{ x.obtionC }}</td>
+                      <td>{{ x.obtionD }}</td>
+                      <td>{{ x.correct_answer }}</td>
+                      
+                    </tr>              
+                    {% endfor %}
+                  </table>
+              </div>            
+                </center>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+
+    
+{% endblock %}

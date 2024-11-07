@@ -1,0 +1,94 @@
+{% extends 'student_base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<style>
+  input[type=text],
+  input[type=file],
+  select {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #d6b0b0;
+    box-sizing: border-box;
+  }
+
+
+
+  .fa-google {
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* button {
+  background-color: #266c87;
+  color: white;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+} */
+
+  button:hover {
+    opacity: 0.8;
+  }
+
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+
+  .main {
+    padding-top: 10px !important;
+
+  }
+
+  .rown {
+    background-color: white;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+</style>
+
+<!-- <script src="https://kit.fontawesome.com/1cf1ca806e.js" crossorigin="anonymous"></script> -->
+
+
+
+
+<div class="container mb-5 mt-5">
+  <div class="row">
+    {% if distinct_categories %}
+    {% for x in distinct_categories %}
+    <div class="col-12 col-md-2">
+      <a href="/book/{{ x.category }}">
+        <img src="{% static 'img/class.png' %}" class="w-100" width="200px" alt="">
+        <center>
+          <p class="mt-2">{{ x.category }}</p>
+        </center>
+        <center></center>
+          <p class="mt-2">{{ x.subject }}</p>
+        </center>
+        
+      </a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No categories found.</p>
+    {% endif %}
+  </div>
+
+</div>
+
+{% endblock %}

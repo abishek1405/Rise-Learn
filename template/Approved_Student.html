@@ -1,0 +1,39 @@
+{% extends 'faculty_base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="container mt-5">
+    <center>
+        <div class="row">
+           <center>
+            <h3>Add Mentor</h3>
+            <div class="col-8 bg-primary">
+                <table class="w3-table-all">
+                    <thead>
+                      <tr style="background-color: #f0e62600;">
+                        <th>Index_No</th>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Gender</th>
+                        <th>Class_name</th>
+                      </tr>
+                    </thead>
+                    {% for x in data %}
+                    <tr>
+                      <td>{{ forloop.counter }}</td>
+                      <td>{{ x.username }}</td>
+                      <td>{{ x.contact }}</td>
+                      <td>{{ x.gender }}</td>
+                      <td>{{ x.class_name }}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                    
+                </table>
+             </div>
+           </center>
+        </div>
+    </center>
+</div>
+{% endblock %}

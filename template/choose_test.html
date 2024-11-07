@@ -1,0 +1,39 @@
+{% extends 'student_base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  .shad a{
+    text-decoration: none;
+    color: black;
+    box-shadow: 1px 1px 5px #ccc;
+    padding: 10px;
+    display: block;
+    margin-bottom: 20px;
+}
+.shad a p{
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+</style>
+
+<div class="container mt-5 mb-5 shad">
+    <div class="row">
+        {% for x in data %}
+        <div class="col-12 col-md-2">
+          <a href="/test/{{ x.sub }}" style="text-decoration: none; color: black;">
+            <center><i class="fa-solid fa-clipboard" style="font-size: 100px; color: rgb(159, 192, 136);"></i></center>
+            <center><p>{{ x.sub }}</p></center>
+          </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
